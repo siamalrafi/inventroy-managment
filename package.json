@@ -4,6 +4,7 @@
   "description": "this is the backend project called inventory-managment. Here i will try to make aproject like indestry levelt system",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "npm start"
   },
   "repository": {
