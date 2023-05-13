@@ -1,0 +1,22 @@
+{
+  "name": "inventory-managment",
+  "version": "1.0.0",
+  "description": "this is the backend project called inventory-managment. Here i will try to make aproject like indestry levelt system",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siamalrafi/inventroy-managment.git"
+  },
+  "keywords": [
+    "inventroy-managment"
+  ],
+  "author": "siam al rafi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siamalrafi/inventroy-managment/issues"
+  },
+  "homepage": "https://github.com/siamalrafi/inventroy-managment#readme"
+}
