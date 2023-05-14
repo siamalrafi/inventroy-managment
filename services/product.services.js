@@ -46,3 +46,9 @@ exports.bulkDeleteProductService = async (ids) => {
    const result = await Product.deleteMany({ _id: ids });
    return result;
 };
+
+// update many products ---
+exports.updateManyServices = async (data) => {
+   const result = await Product.create(data);
+   return result;
+};
