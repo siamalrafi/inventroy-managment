@@ -14,6 +14,7 @@ router
 
 // bulk update ---
 router.route("/bulk-update").patch(productController.bulkUpdateProduct);
+router.route("/bulk-delete").delete(productController.bulkDeleteProduct);
 
 // update product by id ---
 router.route("/:id").patch(productController.updateProductById).delete(productController.deleteProductById);
