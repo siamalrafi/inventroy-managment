@@ -83,6 +83,8 @@ const productSchema = mongoose.Schema(
    }
 );
 
+/* // middleware for mongoose
+
 // before post ---
 productSchema.pre("save", function (next) {
    console.log("// before post");
@@ -103,7 +105,7 @@ productSchema.post("save", function (doc, next) {
 // method ---
 productSchema.methods.logger = function () {
    console.log(`data saved for ${this.price}`);
-};
+}; */
 
 // mongoose models ---
 const Product = mongoose.model("Product", productSchema);
@@ -117,7 +119,6 @@ app.post("/api/v1/product", async (req, res, next) => {
 
       result.logger();
 
-
       return res.status(200).json({
          status: "success",
          message: "Product inserted successfully.",
@@ -127,6 +128,23 @@ app.post("/api/v1/product", async (req, res, next) => {
       return res.status(400).json({
          status: "error",
          message: "Product not inserted.",
+         error: error.message,
+      });
+   }
+});
+
+// get all data ---
+app.get("/api/v1/products", async (req, res) => {
+   try {
+      res.status(200).json({
+         status: "success",
+         message: "Products fetched successfully.",
+         result: await Product.find({ $and: [{ status: "in-stock" }, { price: { $gt: 18 } }] }),
+      });
+   } catch (error) {
+      res.status(400).json({
+         status: "error",
+         message: "Products can't not get.",
          error: error.message,
       });
    }
