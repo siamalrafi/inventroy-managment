@@ -12,6 +12,9 @@ router
    // get all data ---
    .get(productController.getAllProducts);
 
+// bulk update ---
+router.route("/bulk-update").patch(productController.bulkUpdateProduct);
+
 // update product by id ---
 router.route("/:id").patch(productController.updateProductById);
 

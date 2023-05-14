@@ -14,8 +14,23 @@ exports.getAllProductsServices = () => {
 };
 
 // update a Product by id ---
-
 exports.updateProductServices = async (id, data) => {
    const result = await Product.findByIdAndUpdate(id, data, { new: true });
    return result;
+};
+
+// bulk update a Product ---
+exports.bulkUpdateProductServices = async (data) => {
+   // const result = await Product.updateMany({ _id: data.ids }, data.data, {
+   //    runValidators: true,
+   // });
+
+   const products = [];
+
+   data.ids.forEach((product) => {
+      products.push(Product.updateOne({ _id: product.id }, product.data));
+   });
+
+   const result = await Promise.all(products);
+   console.log(result);
 };
