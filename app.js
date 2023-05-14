@@ -88,13 +88,21 @@ const Product = mongoose.model("Product", productSchema);
 
 // posting to database ---
 app.post("/api/v1/product", async (req, res, next) => {
-   const data = req.body;
-   const result = await Product.insertMany(data);
+   try {
+      const data = req.body;
+      const product = await Product(data);
+      const result = await product.save();
 
-   if (result) {
-      return res.status(400).json({
+      return res.status(200).json({
+         status: "success",
          message: "Product inserted successfully.",
          result: result,
+      });
+   } catch (error) {
+      return res.status(400).json({
+         status: "error",
+         message: "Product not inserted.",
+         error: error.message,
       });
    }
 });

@@ -9,15 +9,9 @@ const app = require("./app");
 DBConnect();
 console.log(mongoose.connection.readyState);
 
-// mongoose.connect("mongodb://0.0.0.0:27017/acc").then(() => {
-
 // ---------- Server PORT ----------
 const port = process.env.PORT || 8080;
 
-app.get("/", (req, res) => {
-   res.send("EduMate server Running...");
-});
-
 app.listen(port, () => {
-   console.log(`App is running on port ${port}`.yellow.bold);
+   console.log(`App is running on port http://localhost:${port}`.yellow.bold);
 });
