@@ -12,4 +12,7 @@ router
    // get all data ---
    .get(productController.getAllProducts);
 
+// update product by id ---
+router.route("/:id").patch(productController.updateProductById);
+
 module.exports = router;
