@@ -26,7 +26,7 @@ exports.getAllProducts = async (req, res) => {
       const filters = { ...req.query };
       const excludeFields = ["sort", "page", "limit"];
       excludeFields.forEach((fields) => delete filters[fields]);
-
+      console.log(filters);
       const queries = {};
 
       if (req.query.sort) {
@@ -41,7 +41,6 @@ exports.getAllProducts = async (req, res) => {
          console.log(fields);
       }
 
-      
       const result = await getAllProductsServices(filters, queries);
 
       res.status(200).json({
