@@ -9,12 +9,15 @@ exports.createProductServices = async (data) => {
 
 // get all products ---
 exports.getAllProductsServices = async (filters, queries) => {
-   const products = await Product.find(filters).skip(queries.skip).limit(queries.limit).select(queries.fields).sort(queries.sortBy);
-
-   // return products
+   const products = await Product
+      // find all products with necessary filters
+      .find(filters)
+      .skip(queries.skip)
+      .limit(queries.limit)
+      .select(queries.fields)
+      .sort(queries.sortBy);
 
    const totalProducts = await Product.countDocuments(filters);
-   console.log(totalProducts);
    const page = Math.ceil(totalProducts / queries.limit);
    return { totalProducts, page, products };
 };

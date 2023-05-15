@@ -45,13 +45,13 @@ exports.getAllProducts = async (req, res) => {
          // price,qunatity   -> 'price quantity'
          const sortBy = req.query.sort.split(",").join(" ");
          queries.sortBy = sortBy;
-         console.log(sortBy);
+         // console.log(sortBy);// available
       }
 
       if (req.query.fields) {
          const fields = req.query.fields.split(",").join(" ");
          queries.fields = fields;
-         console.log(fields);
+         // console.log(fields); // available
       }
 
       if (req.query.page) {
