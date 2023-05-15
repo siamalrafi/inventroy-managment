@@ -23,17 +23,16 @@ exports.createProduct = async (req, res, next) => {
 // get all products ---
 exports.getAllProducts = async (req, res) => {
    try {
-      const filters = { ...req.query };
+      let filters = { ...req.query };
       const excludeFields = ["sort", "page", "limit"];
       excludeFields.forEach((fields) => delete filters[fields]);
 
-      //gt ,lt ,gte .lte
+      //gt ,lt ,gte ,lte ---
       let filtersString = JSON.stringify(filters);
       filtersString = filtersString.replace(/\b(gt|gte|lt|lte)\b/g, (match) => `$${match}`);
 
       filters = JSON.parse(filtersString);
-
-      console.log(filters);
+    
 
       const queries = {};
 
@@ -49,7 +48,7 @@ exports.getAllProducts = async (req, res) => {
          console.log(fields);
       }
 
-      const result = await getAllProductsServices(filters, queries);
+      const result = await getAllProductsServices(filters);
 
       res.status(200).json({
          status: "success",

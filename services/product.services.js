@@ -9,7 +9,8 @@ exports.createProductServices = async (data) => {
 
 // get all products ---
 exports.getAllProductsServices = (filters, queries) => {
-   const result = Product.find().select(queries.fields).sort(queries.sortBy).limit(1);
+   console.log(filters);
+   const result = Product.find(filters);
    return result;
 };
 
