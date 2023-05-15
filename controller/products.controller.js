@@ -26,7 +26,15 @@ exports.getAllProducts = async (req, res) => {
       const filters = { ...req.query };
       const excludeFields = ["sort", "page", "limit"];
       excludeFields.forEach((fields) => delete filters[fields]);
+
+      //gt ,lt ,gte .lte
+      let filtersString = JSON.stringify(filters);
+      filtersString = filtersString.replace(/\b(gt|gte|lt|lte)\b/g, (match) => `$${match}`);
+
+      filters = JSON.parse(filtersString);
+
       console.log(filters);
+
       const queries = {};
 
       if (req.query.sort) {
