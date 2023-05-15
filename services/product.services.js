@@ -8,8 +8,8 @@ exports.createProductServices = async (data) => {
 };
 
 // get all products ---
-exports.getAllProductsServices = () => {
-   const result = Product.find();
+exports.getAllProductsServices = (filters, queries) => {
+    const result = Product.find(filters).sort(queries.sortBy) 
    return result;
 };
 

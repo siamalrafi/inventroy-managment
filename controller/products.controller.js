@@ -4,7 +4,6 @@ const { createProductServices, getAllProductsServices, updateProductServices, bu
 // create a new product ---
 exports.createProduct = async (req, res, next) => {
    try {
-      const data = req.body;
       const result = await createProductServices(data);
 
       return res.status(200).json({
@@ -24,7 +23,27 @@ exports.createProduct = async (req, res, next) => {
 // get all products ---
 exports.getAllProducts = async (req, res) => {
    try {
-      const result = await getAllProductsServices();
+      const filters = { ...req.query };
+      const excludeFields = ["sort", "page", "limit"];
+      excludeFields.forEach((fields) => delete filters[fields]);
+
+      const queries = {};
+
+      if (req.query.sort) {
+         // price,qunatity   -> 'price quantity'
+         const sortBy = req.query.sort.split(",").join(" ");
+         queries.sortBy = sortBy;
+      }
+
+      if (req.query.fields) {
+         const fields = req.query.fields.split(",").join(" ");
+         queries.fields = fields;
+         console.log(fields);
+      }
+
+      
+      const result = await getAllProductsServices(filters, queries);
+
       res.status(200).json({
          status: "success",
          message: "Products fetched successfully.",
