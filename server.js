@@ -7,7 +7,7 @@ const app = require("./app");
 
 // database connection
 DBConnect();
-console.log(mongoose.connection.readyState);
+
 
 // ---------- Server PORT ----------
 const port = process.env.PORT || 8080;

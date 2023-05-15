@@ -8,10 +8,15 @@ exports.createProductServices = async (data) => {
 };
 
 // get all products ---
-exports.getAllProductsServices = (filters, queries) => {
-   console.log(filters);
-   const result = Product.find(filters);
-   return result;
+exports.getAllProductsServices = async (filters, queries) => {
+   const products = await Product.find(filters).skip(queries.skip).limit(queries.limit).select(queries.fields).sort(queries.sortBy);
+
+   // return products
+
+   const totalProducts = await Product.countDocuments(filters);
+   console.log(totalProducts);
+   const page = Math.ceil(totalProducts / queries.limit);
+   return { totalProducts, page, products };
 };
 
 // update a Product by id ---
