@@ -120,6 +120,7 @@ userSchema.methods.generateConfirmationToken = function () {
 
 const User = mongoose.model("User", userSchema);
 
+// export user ---
 module.exports = User;
 
 /*
