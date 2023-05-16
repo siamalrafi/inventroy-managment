@@ -1,7 +1,17 @@
 const express = require("express");
 const router = express.Router();
+const uploader = require("../../middleware/uploader");
 
+//  other import ---
 const productController = require("../../controller/products.controller");
+
+router.post("/file-upload", uploader.array("image"), productController.fileUpload);
+
+{
+   /* <input type="file" name="image" /> */
+}
+// const formData = new FormData();
+// formData.append("image", forData);
 
 // posting to database ---
 router
