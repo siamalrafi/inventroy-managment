@@ -80,7 +80,7 @@ const stockSchema = mongoose.Schema(
          },
       },
       status: {
-         type: string,
+         type: String,
          required: true,
          enum: {
             values: ["in-stock", "out-of-stock", "discontinued"],
@@ -121,7 +121,7 @@ const stockSchema = mongoose.Schema(
    }
 );
 
-productSchema.pre("save", function (next) {
+stockSchema.pre("save", function (next) {
    //this ->
    console.log(" Before saving data");
    if (this.quantity == 0) {

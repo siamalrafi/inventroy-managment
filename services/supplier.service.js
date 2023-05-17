@@ -1,4 +1,4 @@
-const Supplier = require("../models/Supplier");
+const Supplier = require("../model/Supplier");
 
 exports.createSupplierService = async (data) => {
    const result = await Supplier.create(data);

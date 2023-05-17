@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Stock = require("../models/Stock");
+const Stock = require("../model/Stock");
 const ObjectId = mongoose.Types.ObjectId;
 
 exports.getStocksService = async (filters, queries) => {
