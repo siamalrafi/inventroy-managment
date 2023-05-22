@@ -9,6 +9,7 @@ const categoryRoute = require("./routes/v1/category.route");
 const storeRoute = require("./routes/v1/store.route");
 const supplierRoute = require("./routes/v1/supplier.route");
 const stockRoute = require("./routes/v1/stock.route");
+const userRoute = require("./routes/v1/user.route");
 
 app.use(express.json());
 app.use(cors());
@@ -20,7 +21,7 @@ app.use("/api/v1/category", categoryRoute);
 app.use("/api/v1/store", storeRoute);
 app.use("/api/v1/supplier", supplierRoute);
 // app.use("/api/v1/stock", stockRoute);
-// app.use("/api/v1/user", userRoute);
+app.use("/api/v1/user", userRoute);
 
 // get main routes ---
 app.get("/", (req, res) => {
