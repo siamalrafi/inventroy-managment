@@ -4,6 +4,8 @@ const uploader = require("../../middleware/uploader");
 
 //  other import ---
 const productController = require("../../controller/products.controller");
+const authorization = require("../../middleware/authorization");
+const verifyToken = require("../../middleware/verifyToken");
 
 router.post("/file-upload", uploader.array("image"), productController.fileUpload);
 
@@ -20,7 +22,7 @@ router
    .post(productController.createProduct)
 
    // get all data ---
-   .get(productController.getAllProducts);
+   .get(verifyToken, authorization("buyer"), productController.getAllProducts);
 
 // bulk update ---
 router.route("/bulk-update").patch(productController.bulkUpdateProduct);
