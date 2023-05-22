@@ -1,10 +1,23 @@
 const User = require("../model/User");
 const { signupService, findUserByEmail } = require("../services/user.service");
 const { generateToken } = require("../utils/token");
+const { sendMailWithGmail, sendMailWithMailGun } = require("../utils/email");
 
 exports.signup = async (req, res, next) => {
    try {
       const user = await signupService(req.body);
+
+      // const token = user.generateConfirmationToken();
+
+      // await user.save({ validateBeforeSave: false });
+
+      // const mailData = {
+      //    to: [user.email],
+      //    subject: "Verify your Account",
+      //    text: `Thank you for creating your account. Please confirm your account here: ${req.protocol}://${req.get("host")}${req.originalUrl}/confirmation/${token}`,
+      // };
+
+      // await sendMailWithMailGun(mailData);
 
       res.status(200).json({
          status: "success",
