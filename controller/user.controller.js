@@ -3,6 +3,7 @@ const { signupService, findUserByEmail } = require("../services/user.service");
 const { generateToken } = require("../utils/token");
 const { sendMailWithGmail, sendMailWithMailGun } = require("../utils/email");
 
+// sign up the user
 exports.signup = async (req, res, next) => {
    try {
       console.log(req.body);
