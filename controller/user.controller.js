@@ -5,6 +5,7 @@ const { sendMailWithGmail, sendMailWithMailGun } = require("../utils/email");
 
 exports.signup = async (req, res, next) => {
    try {
+      console.log(req.body);
       const user = await signupService(req.body);
 
       // const token = user.generateConfirmationToken();
@@ -90,6 +91,7 @@ exports.login = async (req, res, next) => {
    }
 };
 
+// get Me --
 exports.getMe = async (req, res) => {
    try {
       const user = await findUserByEmail(req.user?.email);
@@ -102,6 +104,24 @@ exports.getMe = async (req, res) => {
       res.status(500).json({
          status: "fail",
          error,
+      });
+   }
+};
+
+exports.logOut = async (req, res, next) => {
+   try {
+      let token = req.body;
+      console.log(token);
+      token = "44";
+
+      res.status(500).json({
+         status: "logout",
+         result: token,
+      });
+   } catch (error) {
+      res.status(500).json({
+         status: "fail",
+         error: error.message,
       });
    }
 };

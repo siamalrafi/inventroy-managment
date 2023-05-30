@@ -10,4 +10,6 @@ router.post("/login", userController.login);
 
 router.get("/me", verifyToken, userController.getMe);
 
+router.get("/logout", userController.logOut);
+
 module.exports = router;
