@@ -108,6 +108,7 @@ exports.getMe = async (req, res) => {
    }
 };
 
+// log out the user
 exports.logOut = async (req, res, next) => {
    try {
       let token = req.body;
