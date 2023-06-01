@@ -52,6 +52,7 @@ exports.getStocks = async (req, res, next) => {
    }
 };
 
+// get the stock by id
 exports.getStockById = async (req, res) => {
    try {
       const { id } = req.params;
