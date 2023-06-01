@@ -9,6 +9,7 @@ const storage = multer.diskStorage({
    },
 });
 
+// image uploader for application
 const uploader = multer({
    storage,
    fileFilter: (req, file, cb) => {
