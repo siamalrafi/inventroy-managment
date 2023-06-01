@@ -49,6 +49,7 @@ const mg = mailgun.client({
    key: process.env.MAILGUN_API_KEY,
 });
 
+// email send with mailGun
 module.exports.sendMailWithMailGun = async (data) => {
    const result = await mg.messages.create("sandboxf3104014604b45b09c95dd762669be2b.mailgun.org", {
       from: "Mailgun Sandbox <postmaster@sandboxf3104014604b45b09c95dd762669be2b.mailgun.org>",
