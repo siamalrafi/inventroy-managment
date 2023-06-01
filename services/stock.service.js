@@ -20,6 +20,7 @@ exports.getStocksService = async (filters, queries) => {
    return { total, count: stocks.length, page, stocks };
 };
 
+//  get the stock services by id
 exports.getStockByIdService = async (id) => {
    const stock = await Stock.findOne({ _id: id }).populate("store.id").populate("suppliledBy.id").populate("brand.id");
    return stock;
