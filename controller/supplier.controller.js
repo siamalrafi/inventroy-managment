@@ -36,6 +36,7 @@ exports.getSuppliers = async (req, res, next) => {
    }
 };
 
+// get supplier by id
 exports.getSupplierById = async (req, res, next) => {
    const { id } = req.params;
    try {
