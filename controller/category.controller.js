@@ -1,5 +1,6 @@
 const { getCategoriesService, createCategoryService } = require("../services/category.service");
 
+// export all categories
 exports.getCategories = async (req, res) => {
    try {
       const categories = await getCategoriesService();
