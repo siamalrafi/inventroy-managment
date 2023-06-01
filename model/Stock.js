@@ -133,4 +133,5 @@ stockSchema.pre("save", function (next) {
 
 const Stock = mongoose.model("Stock", stockSchema);
 
+// export stock model
 module.exports = Stock;
