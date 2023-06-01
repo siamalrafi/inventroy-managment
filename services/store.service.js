@@ -13,6 +13,7 @@ exports.getStoresService = async () => {
    return stores;
 };
 
+//  get store services by service
 exports.getStoreByIdService = async (storeId) => {
    const store = await Store.find({ _id: storeId });
    return store;
