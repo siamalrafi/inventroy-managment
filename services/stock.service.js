@@ -26,6 +26,7 @@ exports.getStockByIdService = async (id) => {
    return stock;
 };
 
+// create a new stock services
 exports.createStockService = async (data) => {
    const stock = await Stock.create(data);
    return stock;
