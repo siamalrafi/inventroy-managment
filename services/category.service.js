@@ -6,6 +6,7 @@ exports.getCategoriesService = async () => {
    return categories;
 };
 
+// all categories services
 exports.createCategoryService = async (data) => {
    const category = await Category.create(data);
    return category;
