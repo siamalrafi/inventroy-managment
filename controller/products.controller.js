@@ -126,7 +126,6 @@ exports.bulkUpdateProduct = async (req, res, next) => {
 };
 
 // delete a product by id ---
-
 exports.deleteProductById = async (req, res, next) => {
    try {
       const { id } = req.params;
