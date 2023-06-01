@@ -12,6 +12,7 @@ exports.getSuppliersService = async () => {
    return suppliers;
 };
 
+// get Supplier service by id
 exports.getSupplierByIdService = async (id) => {
    const supplier = await Supplier.findOne({ _id: id });
    return supplier;
