@@ -8,4 +8,5 @@ const dbConnect = () => {
    });
 };
 
+// export dbConnect function
 module.exports = dbConnect;
