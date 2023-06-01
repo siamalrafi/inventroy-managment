@@ -10,4 +10,5 @@ router
 
 router.route("/:id").get(supplierController.getSupplierById).patch(supplierController.updateSupplier);
 
+// supplier routes
 module.exports = router;
