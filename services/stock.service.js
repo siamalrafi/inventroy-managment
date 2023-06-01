@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Stock = require("../model/Stock");
 const ObjectId = mongoose.Types.ObjectId;
 
+// get the stock services
 exports.getStocksService = async (filters, queries) => {
    // const stocks = await Stock.find(filters)
    //   .skip(queries.skip)
