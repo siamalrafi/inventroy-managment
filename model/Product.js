@@ -83,4 +83,5 @@ productSchema.pre("save", function (next) {
 
 const Product = mongoose.model("Product", productSchema);
 
+// export product
 module.exports = Product;
