@@ -62,6 +62,7 @@ exports.getSupplierById = async (req, res, next) => {
    }
 };
 
+// update supplier
 exports.updateSupplier = async (req, res, next) => {
    const { id } = req.params;
    try {
