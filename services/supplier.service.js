@@ -18,6 +18,7 @@ exports.getSupplierByIdService = async (id) => {
    return supplier;
 };
 
+//  update Supplier service
 exports.updateSupplierService = async (id, data) => {
    const result = await Supplier.updateOne({ _id: id }, data, {
       runValidators: true,
