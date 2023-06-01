@@ -1,8 +1,8 @@
 const { getStoresService, createStoreService, getStoreByIdService } = require("../services/store.service");
 
+// create the store
 exports.createStore = async (req, res) => {
    try {
-    
       const result = await createStoreService(req.body);
       res.status(200).json({
          status: "success",
