@@ -36,6 +36,7 @@ exports.getStores = async (req, res) => {
    }
 };
 
+// get the store by id
 exports.getStoreById = async (req, res) => {
    const { id } = req.params;
    try {
