@@ -107,8 +107,8 @@ userSchema.pre("save", function (next) {
 userSchema.methods.comparePassword = function (password, hash) {
    const isPasswordValid = bcrypt.compareSync(password, hash);
    return isPasswordValid;
- };
- 
+};
+
 userSchema.methods.generateConfirmationToken = function () {
    const token = crypto.randomBytes(32).toString("hex");
 
@@ -129,11 +129,11 @@ module.exports = User;
 /*
 
 {
-    "email": "mezba1@test.com",
-    "password": "mezba123456#A",
-    "confirmPassword": "mezba123456#A",
-    "firstName": "Mezbaul Abedin",
-    "lastName": "Forhan",
+    "email": "abc@test.com",
+    "password": "abc#A",
+    "confirmPassword": "abc123456#A",
+    "firstName": "abc",
+    "lastName": "abc",
     "shippingAddress": "944 osthir Street",
     "presentAddress": "944 osthir Street",
     "permanentAddress": "944 Russell Street",
@@ -145,8 +145,8 @@ module.exports = User;
 /*
 "name":"Manager",
 "email":"managerctg@test.com",
-"password":"mezba123456##",
-"confirmPassword":"mezba123456##",
+"password":"abc##",
+"confirmPassword":"abc##",
 "firtsName":"Manager of",
 "lastName":"CTG",
 "contactNumber":"11111111111",
@@ -158,7 +158,5 @@ module.exports = User;
 "presentAddress":"944 osthir Street",
 "permanentAddress":"944 Russell Street",
 "nationalIdImageURL":"https://i.ibb.co/WnFSs9Y/unnamed.webp",
-
-
 
 */
