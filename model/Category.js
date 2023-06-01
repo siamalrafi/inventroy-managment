@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 
+// create a new category schema object
 const categorySchema = mongoose.Schema(
    {
       name: {
