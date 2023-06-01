@@ -18,6 +18,7 @@ exports.createStore = async (req, res) => {
    }
 };
 
+// get the store
 exports.getStores = async (req, res) => {
    try {
       const stores = await getStoresService();
