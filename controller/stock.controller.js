@@ -84,6 +84,7 @@ exports.getStockById = async (req, res) => {
    }
 };
 
+// create a new stock
 exports.createStock = async (req, res, next) => {
    try {
       // save or create
