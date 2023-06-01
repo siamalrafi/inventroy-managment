@@ -70,6 +70,7 @@ const productSchema = mongoose.Schema(
    }
 );
 
+// method for products
 productSchema.pre("save", function (next) {
    //this ->
    console.log(" Before saving data");
