@@ -1,5 +1,6 @@
 const Supplier = require("../model/Supplier");
 
+// create a new Supplier service
 exports.createSupplierService = async (data) => {
    const result = await Supplier.create(data);
    return result;
