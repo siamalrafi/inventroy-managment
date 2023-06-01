@@ -9,4 +9,5 @@ router
 
 // router.route("/:id").get(storeController.getStoreById);
 
+// export store routes
 module.exports = router;
