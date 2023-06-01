@@ -18,6 +18,7 @@ exports.createSupplier = async (req, res) => {
    }
 };
 
+// get the supplier
 exports.getSuppliers = async (req, res, next) => {
    try {
       const suppliers = await getSuppliersService(req.body);
