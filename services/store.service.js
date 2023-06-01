@@ -1,8 +1,9 @@
 const Store = require("../model/Store");
 
+// create a new store services
 exports.createStoreService = async (data) => {
    console.log(data);
-   const store = await Store.save(data)
+   const store = await Store.save(data);
    return store;
 };
 
