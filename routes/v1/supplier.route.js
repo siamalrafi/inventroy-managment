@@ -3,6 +3,7 @@ const supplierController = require("../../controller/supplier.controller");
 const router = express.Router();
 
 router
+
    .route("/")
    // post supplier
    .post(supplierController.createSupplier)
