@@ -131,6 +131,7 @@ stockSchema.pre("save", function (next) {
    next();
 });
 
+// create a stack model
 const Stock = mongoose.model("Stock", stockSchema);
 
 // export stock model
